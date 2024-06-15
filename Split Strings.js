@@ -1,3 +1,4 @@
+//сырое решение
 function solution(str){
     let splitString;
     
@@ -10,3 +11,15 @@ function solution(str){
    };
    return splitString || [];
  };
+
+ //классное решение
+ function solution(str) {
+  str.length % 2 && (str += "_");
+  return str.match(/.{1,2}/g) || [];
+};
+
+//мое отрефакторинговое решение
+function solution(str){
+  str.length % 2 ? (str+="_"): str;
+  return str.match(/(..?)/g) || [];
+};
